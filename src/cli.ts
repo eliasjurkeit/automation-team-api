@@ -20,6 +20,9 @@ program.command('demo').action(() => {
       'npx prisma db push --skip-generate --force-reset --accept-data-loss',
       { stdio: 'inherit' },
     );
+
+    console.log('Starting NestJS Server...');
+    execSync('npm run start:dev', { stdio: 'inherit' });
   } catch (error) {
     console.error(error);
     process.exit(1);
